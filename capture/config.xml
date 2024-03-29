@@ -1,0 +1,29 @@
+<config>
+  <CapturePlugin>libvoip.so</CapturePlugin>
+  <CapturePluginPath>/usr/lib</CapturePluginPath>
+  <LiveStreamAllCalls>true</LiveStreamAllCalls>
+  <CapturePortFilters>LiveStreamFilter</CapturePortFilters>
+  <RTMPServerEndPoint>rtmp:1935/live</RTMPServerEndPoint>
+  <LiveStreamingQueueFlushThreshold>500</LiveStreamingQueueFlushThreshold>
+  <TapeProcessors>BatchProcessing, Reporting</TapeProcessors>
+  <DiscardUnidirectionalCalls>true</DiscardUnidirectionalCalls>
+  <VoIpPlugin>
+    <Devices>eth0</Devices>
+    <PcapSocketBufferSize>8388608</PcapSocketBufferSize>
+    <SipTrackMediaAddressOnSender>true</SipTrackMediaAddressOnSender>
+    <RtcpDetect>true</RtcpDetect>
+    <SipTreat200OkAsInvite>false</SipTreat200OkAsInvite>
+    <RtpS1S2MappingDeterministic>true</RtpS1S2MappingDeterministic>
+    <SipDirectionReferenceUserAgents>Telephone</SipDirectionReferenceUserAgents>
+  </VoIpPlugin>
+  <AudioOutputEnable>true</AudioOutputEnable>
+  <AudioOutputPath>/var/log/orkaudio/audio</AudioOutputPath>
+  <AudioFileBitRate>8000</AudioFileBitRate>
+  <StorageAudioFormat>pcmwav</StorageAudioFormat>
+  <StereoRecording>true</StereoRecording>
+  <BatchProcessingEnhancePriority>true</BatchProcessingEnhancePriority>
+  <NumBatchThreads>25</NumBatchThreads>
+  <AudioFileOwner>tomcat</AudioFileOwner>
+  <AudioFileGroup>tomcat</AudioFileGroup>
+  <AudioFilePermissions>644</AudioFilePermissions>
+</config>
